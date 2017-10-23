@@ -8,5 +8,5 @@ npm install
 # Run
 node run.js
 
-#Usage
+# Usage
 run.js will compile and deploy Register.sol to http://localhost:8545 automatically if it wasn't deployed before, then call Dispatcher.sol's add() and get its return value.
