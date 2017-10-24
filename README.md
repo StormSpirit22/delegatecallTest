@@ -1,5 +1,5 @@
-# delecateCallTest
-Using delecatecall() to call functions in other contracts and get its return value
+# delegateCallTest
+Using delegatecall() to call functions in other contracts and get its return value
 ps. Only Dispather.sol and Upgrade.sol are used in run.js.
 
 # Installation
