@@ -33,7 +33,7 @@ contract Dispatcher {
 
     }
 
-    function add(uint256 _x, uint256 _y) returns (uint256) { 
+    function add(uint256 _x, uint256 _y) public constant returns (uint256) { 
         var len = 32;
         bytes4 _sig = bytes4(keccak256("plus(uint256,uint256)"));
         // returnSizes[sig];
@@ -41,12 +41,14 @@ contract Dispatcher {
         //"0x916f4029",2,3
         assembly { 
             mstore(0x0, _sig)
+            // mstore(0x0, 99)
             log1(0x0, 32, "wei1")
             calldatacopy(0x4, 0x4, calldatasize) 
             log1(0x0, calldatasize, "wei2")
-            let a:= delegatecall(3000000, target, 0x0, calldatasize, 0x40, len) 
-            log1(0x40, 32, "weige")
-            return(0x40, len) 
+            let a:= call(3000000, target, 0, 0x0, calldatasize, 0x0, len) 
+            log1(0x0, 32, "weige")
+            return(0x0, 32) 
         }
+        // return tianyou;
     } 
 }

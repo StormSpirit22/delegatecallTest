@@ -2,7 +2,7 @@ pragma solidity ^0.4.11;
 
 contract Upgrade { 
     mapping(bytes4=>uint32) returnSizes; 
-    uint256 z; 
+    uint256 public z; 
     function getValue() returns (uint32) {
         return returnSizes[bytes4(sha3("get()"))];
     }
